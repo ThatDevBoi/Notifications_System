@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Notification Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Send Notification</h2>
+    <textarea id="message" placeholder="Type your message here..."></textarea>
+    <br>
+    <button onclick="sendNotification()">Send</button>
+
+    <script>
+        function sendNotification() {
+            const message = document.getElementById('message').value;
+            if (message) {
+                fetch('/send-notification', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Notification sent!");
+                    } else {
+                        alert("Failed to send notification.");
+                    }
+                });
+            } else {
+                alert("Please enter a message.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+KEY THINGS TO LEARN RIGHT NOW 
+
+- sc900/sc300
+	- I have LABS for this now 
+	- SC900 cert does not expire 
+- Windows Servers W Powershell
+	- Automation with PS 
+	- Making an infrastructure within a Win server 
+
+
+Projects to do 
+
+- 3D Game in Unity - Random Script ideas
+- Notification System for client to admin support
